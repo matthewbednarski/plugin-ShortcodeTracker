@@ -311,9 +311,8 @@ class API extends \Piwik\Plugin\API
             throw new UnableToRedirectException(Piwik::translate('ShortcodeTracker_unable_to_perform_redirect'));
         }
 
-        header('Location: ' . $shortCode['url']);
+        header('Location: ' .$this->decodeUrlForLocation($shortCode['url']));
     }
-
 
     public function getShortcodeUsageReport($idSite, $period, $date, $segment = false, $columns = false)
     {
@@ -429,4 +428,17 @@ class API extends \Piwik\Plugin\API
         return $report;
     }
 
+    /**
+     * A function that decodes htmlspecialchars found in the $url
+     *
+     * @param $url
+     *
+     * @return $url
+     */
+    public function decodeUrlForLocation($url){
+        if( isset($url) ){
+            $url = htmlspecialchars_decode($url);
+        }
+        return $url;
+    }
 }

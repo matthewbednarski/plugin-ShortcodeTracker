@@ -91,7 +91,7 @@ class Model implements ModelInterface
      */
     public function selectShortcodeByCode($shortcode)
     {
-        return $this->getDb()->fetchRow('Select * from ' . Common::prefixTable('shortcode') . '
+         return $this->getDb()->fetchRow('Select * from ' . Common::prefixTable('shortcode') . '
      where code = ? ORDER BY id DESC LIMIT 1', array($shortcode));
     }
 
@@ -115,5 +115,4 @@ class Model implements ModelInterface
     {
         $this->getDb()->$method($query, $params);
     }
-
 }
