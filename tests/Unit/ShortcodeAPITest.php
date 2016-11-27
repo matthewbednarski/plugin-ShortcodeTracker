@@ -8,6 +8,7 @@
 
 namespace Piwik\Plugins\ShortcodeTracker\tests\Unit;
 
+use Piwik\Plugins\ShortcodeTracker\API;
 /**
  * @group ShortcodeTracker
  * @group ShortcodeApi
@@ -17,12 +18,23 @@ class ShortcodeApiTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
+     * @var API
+     */
+    private $component;
+
+    public function setUp()
+    {
+        $this->component = new API();
+    }
+
+    /**
      *
 	 *  @dataProvider urlProvider
      */
-    public function testDecodeUrlForLocation()
+    public function testDecodeUrlForLocation($input, $expected)
     {
-
+		$actual = $component->decodeUrlForLocation($input);
+        $this->assertEquals($expected, $actual);
     }
 
 	/**
@@ -36,5 +48,4 @@ class ShortcodeApiTest extends \PHPUnit_Framework_TestCase
             array('http://johndoe.com?p=1&amp;q=3', 'http://johndoe.com?p=1&q=3')
         );
     }
-
 }

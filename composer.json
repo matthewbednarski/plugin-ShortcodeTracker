@@ -1,19 +1,26 @@
 {
-  "name": "mgazdzik/plugin-ShortcodeTracker",
-  "type": "piwik-plugin",
-  "description": "Piwik plugin allowing user to create shortcodes and track their usage within Piwik. Also integrates with UI to deliver more user-friendly interaction.",
-  "keywords": ["shortcode","shortener","tracker"],
-  "homepage": "http://mgazdzik.pl",
-  "license": "LGPL-3.0+",
-  "authors": [
-    {
-      "name": "Michał Gaździk",
-      "email": "michal@mgazdzik.pl",
-      "homepage": "http://mgazdzik.pl"
+    "name": "mgazdzik/plugin-ShortcodeTracker",
+    "type": "piwik-plugin",
+    "description": "Piwik plugin allowing user to create shortcodes and track their usage within Piwik. Also integrates with UI to deliver more user-friendly interaction.",
+    "keywords": ["shortcode", "shortener", "tracker"],
+    "homepage": "http://mgazdzik.pl",
+    "license": "LGPL-3.0+",
+    "minimum-stability": "dev",
+    "authors": [{
+        "name": "Michał Gaździk",
+        "email": "michal@mgazdzik.pl",
+        "homepage": "http://mgazdzik.pl"
+    }],
+    "autoload": {
+        "psr-0": {
+            "Piwik\\Plugins\\ShortcodeTracker\\": ""
+        }
+    },
+    "require-dev": {
+    	"phpunit/phpunit": "~4.1"
+    },
+    "require": {
+        "piwik/piwik": "~2.14.3",
+        "piwik/piwik-php-tracker": "~1.0"
     }
-  ],
-  "require": {
-    "piwik/piwik": "~2.13.0",
-    "piwik/piwik-php-tracker": "dev-master"
-  }
 }

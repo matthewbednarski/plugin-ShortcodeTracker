@@ -311,7 +311,7 @@ class API extends \Piwik\Plugin\API
             throw new UnableToRedirectException(Piwik::translate('ShortcodeTracker_unable_to_perform_redirect'));
         }
 
-        header('Location: ' .$this->decodeUrlForLocation($shortCode['url']));
+        header('Location: ' . $this->decodeUrlForLocation($shortCode['url']));
     }
 
     public function getShortcodeUsageReport($idSite, $period, $date, $segment = false, $columns = false)
