@@ -14,7 +14,7 @@ use Piwik\Plugins\ShortcodeTracker\API;
  * @group ShortcodeApi
  * @group Plugins
  */
-class ShortcodeApiTest extends \PHPUnit_Framework_TestCase
+class ShortcodeApiUnitTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -33,7 +33,7 @@ class ShortcodeApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testDecodeUrlForLocation($input, $expected)
     {
-		$actual = $component->decodeUrlForLocation($input);
+		$actual = $this->component->decodeUrlForLocation($input);
         $this->assertEquals($expected, $actual);
     }
 
